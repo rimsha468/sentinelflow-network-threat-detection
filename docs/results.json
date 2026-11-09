@@ -1,0 +1,53 @@
+{
+  "rules_only": {
+    "flagged_hosts": 5,
+    "true_positives": 5,
+    "false_positives": 0,
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1": 1.0
+  },
+  "ml_only": {
+    "flagged_hosts": 9,
+    "true_positives": 3,
+    "false_positives": 6,
+    "precision": 0.333,
+    "recall": 0.6,
+    "f1": 0.429
+  },
+  "hybrid": {
+    "flagged_hosts": 11,
+    "true_positives": 5,
+    "false_positives": 6,
+    "precision": 0.455,
+    "recall": 1.0,
+    "f1": 0.625
+  },
+  "per_attack": {
+    "port_scan": {
+      "host": "10.0.0.66",
+      "rule_detected": true,
+      "ml_detected": true
+    },
+    "brute_force": {
+      "host": "10.0.0.77",
+      "rule_detected": true,
+      "ml_detected": false
+    },
+    "beacon": {
+      "host": "10.0.0.88",
+      "rule_detected": true,
+      "ml_detected": false
+    },
+    "dns_tunnel": {
+      "host": "10.0.0.99",
+      "rule_detected": true,
+      "ml_detected": true
+    },
+    "exfil": {
+      "host": "10.0.0.55",
+      "rule_detected": true,
+      "ml_detected": true
+    }
+  }
+}
