@@ -26,7 +26,7 @@ flowchart LR
 
 ## Detections
 
-| Detection | MITRE ATT&CK | Signal |
+| Detection | MITRE ATTACK | Signal |
 |---|---|---|
 | Port scan | T1046 Network Service Discovery | Many distinct targets in a window with a high failed-connection ratio |
 | Brute force | T1110 Brute Force | Burst of connections to one auth service (SSH/RDP/FTP/SMB) |
