@@ -1,0 +1,2 @@
+"""SentinelFlow: hybrid (rules + ML) network threat detection."""
+__version__ = "1.0.0"
