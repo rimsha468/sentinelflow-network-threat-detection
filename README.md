@@ -1,6 +1,6 @@
 # SentinelFlow
 
-**Hybrid network threat detection: behavioural rules + unsupervised ML, mapped to MITRE ATT&CK.**
+**Hybrid network threat detection: behavioural rules + unsupervised ML, mapped to MITRE ATTACK.**
 
 SentinelFlow ingests network flow records (Zeek logs or its built-in traffic simulator), detects
 common attacker techniques with explainable rules, and adds a baseline-deviation ML layer that
@@ -16,7 +16,7 @@ simulator, so detection quality is *measured*, not claimed.
 flowchart LR
     A[Zeek conn/dns logs] --> C[Normalised Flow records]
     B[Attack simulator] --> C
-    C --> R[Rule engine<br/>5 ATT&CK detections]
+    C --> R[Rule engine<br/>5 ATTACK detections]
     C --> F[Window features<br/>per host / 60 s]
     F --> M[Baseline-deviation model]
     R --> G[Alert merge + severity]
@@ -74,7 +74,7 @@ Per-attack: rules detect all five. The ML layer independently detects the port s
 exfiltration (volumetric / statistical deviations) but **misses** the low-volume brute force and
 the beacon, which only look abnormal in *time structure*, something per-window aggregates cannot
 see. This is why the layers are complementary rather than redundant. ML alerts are emitted as
-`medium` triage signals; rule alerts carry the severity and ATT&CK mapping.
+`medium` triage signals; rule alerts carry the severity and ATTACK mapping.
 
 Reproduce: `python -m sentinelflow evaluate --out results.json` (output also in `docs/results.json`).
 
@@ -115,7 +115,7 @@ Reproduce: `python -m sentinelflow evaluate --out results.json` (output also in 
 
 ```
 sentinelflow/
-  rules.py       five ATT&CK-mapped detections
+  rules.py       five ATTACK-mapped detections
   ml.py          window features + baseline-deviation / Isolation Forest models
   simulate.py    labelled traffic + attack generator
   ingest.py      Zeek conn.log / dns.log adapters
